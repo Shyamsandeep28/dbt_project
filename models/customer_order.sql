@@ -1,0 +1,1 @@
+select  o.ORDER_ID ,o.ORDER_DATE ,o.QUANTITY, c.customer_id, c.CUSTOMER_NAME , c.CITY , p.product_id, p.PRODUCT_NAME,p.CATEGORY,p.PRICE from {{ref('stg_orders')}} o join {{ref('stg_customer')}} c on o.customer_id =c.customer_id join {{ref('stg_roduct')}} p on o.product_id = p.product_id 
